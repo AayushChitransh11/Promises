@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
     res.send('Running JavaScript Promises Visualizer Backend');
 });
 
-// ✅ Simulate Chained Promises Execution
+// Simulate Chained Promises Execution
 app.get('/promise-chaining', async (req, res) => {
     emitEvent('call-stack', 'Creating a chained promise');
 
@@ -51,7 +51,7 @@ app.get('/promise-chaining', async (req, res) => {
     res.json({ message: result });
 });
 
-// ✅ Nested Promises (Callback Hell Simulation)
+//  Nested Promises (Callback Hell Simulation)
 app.get('/nested-promises', async (req, res) => {
     emitEvent('call-stack', 'Creating nested promises');
 
@@ -80,7 +80,7 @@ app.get('/nested-promises', async (req, res) => {
     });
 });
 
-// ✅ Demonstrate Promise.any()
+//  Demonstrate Promise.any()
 app.get('/promise-any', async (req, res) => {
     emitEvent('call-stack', 'Starting Promise.any()');
 
@@ -99,7 +99,7 @@ app.get('/promise-any', async (req, res) => {
     }
 });
 
-// ✅ Demonstrate Event Loop Behavior (setTimeout inside Promise)
+//  Demonstrate Event Loop Behavior (setTimeout inside Promise)
 app.get('/event-loop', async (req, res) => {
     emitEvent('call-stack', 'Starting event loop demonstration');
 
@@ -128,7 +128,7 @@ app.get('/event-loop', async (req, res) => {
     res.json({ message: 'Check console for event loop behavior' });
 });
 
-// ✅ Demonstrate Promise.finally()
+//  Demonstrate Promise.finally()
 app.get('/promise-finally', async (req, res) => {
     emitEvent('call-stack', 'Starting Promise.finally() demo');
 
@@ -158,7 +158,7 @@ app.get('/promise-finally', async (req, res) => {
         });
 });
 
-// ✅ Demonstrate long-running task with blocking vs non-blocking behavior
+//  Demonstrate long-running task with blocking vs non-blocking behavior
 app.get('/blocking-task', (req, res) => {
     emitEvent('call-stack', 'Starting long blocking task');
 
@@ -180,7 +180,7 @@ app.get('/non-blocking-task', (req, res) => {
     }, 3000);
 });
 
-// ✅ Handle WebSocket connections
+//  Handle WebSocket connections
 io.on('connection', (socket) => {
     console.log('Client connected to WebSocket');
     socket.on('disconnect', () => {
@@ -188,7 +188,7 @@ io.on('connection', (socket) => {
     });
 });
 
-// ✅ Start the server
+
 server.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
